@@ -1,0 +1,12 @@
+[project]
+name = "talk-to-pdf"
+version = "0.1.0"
+description = "Chat with your PDFs locally using Ollama, ChromaDB and Streamlit — 100% offline RAG."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit==1.58.0",
+    "chromadb==1.5.9",
+    "openai==2.44.0",
+    "PyPDF2==3.0.1",
+]

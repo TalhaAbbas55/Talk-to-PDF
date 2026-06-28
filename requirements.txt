@@ -1,0 +1,6 @@
+# Talk to PDF — runtime dependencies
+# Pinned to the versions this app was developed and tested against.
+streamlit==1.58.0
+chromadb==1.5.9
+openai==2.44.0
+PyPDF2==3.0.1
