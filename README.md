@@ -44,37 +44,54 @@ ollama pull nomic-embed-text
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/talk-to-pdf.git
+git clone https://github.com/TalhaAbbas55/Talk-to-PDF
 cd talk-to-pdf
 ```
 
-### 2. Install the dependencies
+### 2. Install the dependencies & run
 
-Using `pip` and a virtual environment:
+Pick **one** of the two setups below. This project was built with **uv**, but it works the same with plain **pip**.
+
+<details open>
+<summary><b>Option A — using <a href="https://github.com/astral-sh/uv">uv</a> (recommended)</b></summary>
+
+`uv` reads [`pyproject.toml`](pyproject.toml), creates the virtual environment, and installs the exact pinned versions for you.
 
 ```bash
+# Install all dependencies into a managed .venv
+uv sync
+
+# Make sure Ollama is running (skip if it already is)
+ollama serve
+
+# Launch the app
+uv run streamlit run main.py
+```
+
+> Don't have uv yet? Install it with `curl -LsSf https://astral.sh/uv/install.sh | sh`
+> (or `pip install uv`).
+
+</details>
+
+<details>
+<summary><b>Option B — using <code>pip</code> + venv</b></summary>
+
+```bash
+# 1. Create and activate a virtual environment
 python -m venv .venv
 source .venv/bin/activate        # On Windows: .venv\Scripts\activate
+
+# 2. Install the dependencies
 pip install -r requirements.txt
-```
 
-Or, if you use [uv](https://github.com/astral-sh/uv):
+# 3. Make sure Ollama is running (skip if it already is)
+ollama serve
 
-```bash
-uv sync
-```
-
-### 3. Make sure Ollama is running
-
-```bash
-ollama serve        # if it isn't already running in the background
-```
-
-### 4. Launch the app
-
-```bash
+# 4. Launch the app
 streamlit run main.py
 ```
+
+</details>
 
 Streamlit will open the app in your browser (usually at <http://localhost:8501>).
 
